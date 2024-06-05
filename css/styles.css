@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+/* =============================================
+            Website Resets
+================================================ */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+*::-moz-focus-inner {
+	border: 0;
+}
+
+*:focus {
+	outline: none;
+}
+
+/*===============================================================
+            html, body, root, and typography
+==================================================================*/
+:root {
+
+
+	/************************* colors *************************/
+
+	--clr-blue-01-000: hsl(210, 51%, 94%);
+	--clr-blue-01-100: hsl(210, 51%, 89%);
+	--clr-blue-01-200: hsl(210, 51%, 78%);
+	--clr-blue-01-300: hsl(210, 51%, 67%);
+	--clr-blue-01-400: hsl(210, 51%, 55%);
+	--clr-blue-01-500: hsl(210, 64%, 44%);
+	--clr-blue-01-600: hsl(210, 64%, 39%);
+	--clr-blue-01-700: hsl(210, 64%, 34%);
+	--clr-blue-01-800: hsl(210, 64%, 28%);
+	--clr-blue-01-900: hsl(210, 64%, 23%);
+
+	--clr-neutral-000: hsl(210, 0%, 98%);
+	--clr-neutral-100: hsl(210, 0%, 88%);
+	--clr-neutral-200: hsl(210, 0%, 78%);
+	--clr-neutral-300: hsl(210, 0%, 68%);
+	--clr-neutral-400: hsl(210, 0%, 58%);
+	--clr-neutral-500: hsl(210, 0%, 48%);
+	--clr-neutral-600: hsl(210, 0%, 38%);
+	--clr-neutral-700: hsl(210, 0%, 28%);
+	--clr-neutral-800: hsl(210, 0%, 18%);
+	--clr-neutral-900: hsl(210, 0%, 10%);
+
+	--clr-augmented-000: hsl(210, 12%, 98%);
+	--clr-augmented-100: hsl(210, 12%, 88%);
+	--clr-augmented-200: hsl(210, 12%, 78%);
+	--clr-augmented-300: hsl(210, 15%, 68%);
+	--clr-augmented-400: hsl(210, 15%, 58%);
+	--clr-augmented-500: hsl(210, 15%, 48%);
+	--clr-augmented-600: hsl(210, 15%, 38%);
+	--clr-augmented-700: hsl(210, 20%, 28%);
+	--clr-augmented-800: hsl(210, 25%, 18%);
+	--clr-augmented-900: hsl(210, 30%, 10%);
+
+	--clr-semantic-a-400: hsla(0, 96%, 33%, 100%);
+	--clr-semantic-a-300: hsla(0, 96%, 38%, 100%);
+	--clr-semantic-a-200: hsla(0, 96%, 43%, 100%);
+	--clr-semantic-a-100: hsla(0, 96%, 48%, 100%);
+
+
+	/************************* fluid text *************************/
+	--ft-fluid-text-000: clamp(0.51rem, 0.13vi + 0.49rem, 0.64rem);
+	--ft-fluid-text-100: clamp(0.64rem, 0.16vi + 0.61rem, 0.8rem);
+	--ft-fluid-text-200: clamp(0.8rem, 0.2vi + 0.76rem, 1rem);
+	--ft-fluid-text-300: clamp(1rem, 0.25vi + 0.95rem, 1.25rem);
+	--ft-fluid-text-400: clamp(1.25rem, 0.31vi + 1.19rem, 1.56rem);
+	--ft-fluid-text-500: clamp(1.56rem, 0.39vi + 1.48rem, 1.95rem);
+	--ft-fluid-text-600: clamp(1.95rem, 0.49vi + 1.86rem, 2.44rem);
+	--ft-fluid-text-700: clamp(2.44rem, 0.61vi + 2.32rem, 3.05rem);
+	--ft-fluid-text-800: clamp(3.05rem, 0.76vi + 2.9rem, 3.81rem);
+	--ft-fluid-text-900: clamp(3.81rem, 0.95vi + 3.62rem, 4.77rem);
+
+	--ff-body: 'Poiret One', sans-serif;
+
+	--fw-font-weight-300: 300;
+	--fw-font-weight-400: 400;
+	--fw-font-weight-500: 500;
+	--fw-font-weight-600: 600;
+
+	/**************** timing functions ****************/
+	--tf-timing-function-basic-01: cubic-bezier(0.26, 0.1, 0.27, 1.55);
+	--tf-timing-function-basic-02: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+	--tf-timing-function-ease: cubic-bezier(0.19, 0.08, 0.46, 0.99);
+	--tf-timing-function-ease-in: cubic-bezier(0.33, 0.02, 0.84, 0.75);
+	--tf-timing-function-ease-out: cubic-bezier(0.05, 0.21, 0.66, 0.98);
+	--tf-timing-function-ease-in-out: cubic-bezier(0.38, 0, 0.57, 0.99);
+	--tf-timing-function-linear: cubic-bezier(0.19, 0.08, 0.84, 0.75);
+	--tf-timing-function-smooth: cubic-bezier(0.1, 0.7, 0.6, 0.9);
+	--tf-timing-function-snappy: cubic-bezier(0.5, 0, 0.4, 0.98);
+	--tf-timing-function-snappy2: cubic-bezier(.17, .67, .83, .67);
+
+}
+
+html {
+	/*min-width: 100vw;
+	min-height: 100vh;
+	font-size: 100%;*/
+
+}
+@media screen and (max-width: 767px) {
+	html {
+		/*font-size: 75%;*/
+	}
+}
+@media screen and (max-width: 500px) {
+	html {
+		/*font-size: 50%;*/
+	}
+}
+
+html,
+body {
+	/*position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	overflow-x: hidden;
+	font-family: var(--ff-body);
+	font-size: var(--ft-fluid-text-200);
+	font-weight: 400;
+	font-optical-sizing: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.5;
+	background-color: var(--clr-augmented-200);*/
+}
+
+
+p {
+	margin-bottom: 1rem;
+	text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: var(--ff-body);
+	font-weight: 400;
+	line-height: 1.3;
+	text-rendering: optimizeLegibility;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 3.052rem;
+	font-size: var(--ft-fluid-text-700);
+}
+
+h2 {
+	font-size: 2.441rem;
+	font-size: var(--ft-fluid-text-600);
+}
+
+h3 {
+	font-size: 1.953rem;
+	font-size: var(--ft-fluid-text-500);
+}
+
+h4 {
+	font-size: 1.563rem;
+	font-size: var(--ft-fluid-text-400);
+}
+
+h5 {
+	font-size: 1.25rem;
+	font-size: var(--ft-fluid-text-300);
+}
+ul {
+	list-style: none;
+
+}
+
+a {
+	text-decoration: none !important;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+/*=============================================
+   scrollbar styles
+================================================*/
+/* width */
+::-webkit-scrollbar {
+	width: 3px;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+	margin-left: 4px;
+	box-shadow: inset 0 0 5px #bfbfbf;
+	border-radius: 3px;
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+	background: #d9d9d9;
+	border-radius: 3px;
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #616161;
+}
+
+/*===============================================================
+            utility classes
+==================================================================*/
+.utils-container-fluid {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.utils-container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+@media (min-width: 576px) {
+	.utils-container {
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	.utils-container {
+		max-width: 720px;
+	}
+}
+
+@media (min-width: 992px) {
+	.utils-container {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.utils-container {
+		max-width: 1144px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.utils-container {
+		max-width: 1320px;
+	}
+}
+
+.utils-img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.row {
+	display: grid;
+	place-items: center;
+}
+
+
+
+
+
+.clock {
+	/*position: relative;*/
+	background: #ececec;
+	width: 300px;
+	height: 300px;
+	margin: 8% auto 0;
+	border-radius: 50%;
+	border: 14px solid #333;
+	position: relative;
+	box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8);
+}
+
+.dot {
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: #ccc;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+	z-index: 10;
+	box-shadow: 0 2px 4px -1px black;
+}
+
+.hour-hand {
+	position: absolute;
+	z-index: 5;
+	width: 4px;
+	height: 65px;
+	background: #333;
+	top: 79px;
+	transform-origin: 50% 72px;
+	left: 50%;
+	margin-left: -2px;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+}
+
+.minute-hand {
+	position: absolute;
+	z-index: 6;
+	width: 4px;
+	height: 100px;
+	background: #666;
+	top: 46px;
+	left: 50%;
+	margin-left: -2px;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	transform-origin: 50% 105px;
+}
+
+.second-hand {
+	position: absolute;
+	z-index: 7;
+	width: 2px;
+	height: 120px;
+	background: var(--clr-semantic-a-400);
+	top: 26px;
+	left: 50%;
+	margin-left: -1px;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	transform-origin: 50% 125px;
+}
+
+span {
+	display: inline-block;
+	position: absolute;
+	color: #333;
+	font-size: 22px;
+	font-family: "Poiret One", sans-serif;
+	font-weight: 700;
+	z-index: 4;
+}
+
+.h12 {
+	top: 30px;
+	left: 50%;
+	margin-left: -9px;
+}
+.h3 {
+	top: 140px;
+	right: 30px;
+}
+.h6 {
+	bottom: 30px;
+	left: 50%;
+	margin-left: -5px;
+}
+.h9 {
+	left: 32px;
+	top: 140px;
+}
+
+.dial-lines {
+	position: absolute;
+	z-index: 2;
+	width: 2px;
+	height: 15px;
+	background: #666;
+	left: 50%;
+	margin-left: -1px;
+	transform-origin: 50% 150px;
+}
+.dial-lines:nth-of-type(5n) {
+	position: absolute;
+	z-index: 2;
+	width: 4px;
+	height: 25px;
+	background: #666;
+	left: 50%;
+	margin-left: -1px;
+	transform-origin: 50% 150px;
+}
+
+.date {
+	position: absolute;
+	width: 120px;
+	height: 20px;
+	border-radius: 7px;
+	background: #888;
+	text-align: center;
+	line-height: 20px;
+	color: #fff;
+	font-size: 11px;
+	top: 80px;
+	left: 50%;
+	margin-left: -60px;
+	font-family: "Poiret One", sans-serif;
+	font-weight: 700;
+	z-index: 3;
+	letter-spacing: 3px;
+}
+.day {
+	position: absolute;
+	width: 120px;
+	height: 20px;
+	border-radius: 7px;
+	background: #888;
+	text-align: center;
+	line-height: 20px;
+	color: #fff;
+	font-size: 11px;
+	top: 200px;
+	left: 50%;
+	margin-left: -60px;
+	font-family: "Poiret One", sans-serif;
+	font-weight: 700;
+	z-index: 3;
+	letter-spacing: 3px;
+}
