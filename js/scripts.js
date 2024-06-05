@@ -1,4 +1,4 @@
-/*-----Javascript for js-create-design-website */
+/*-----Javascript for css-analog-clock website */
 $(document).ready(function () {
 
    const dialLines = document.getElementsByClassName("dial-lines");
@@ -40,11 +40,13 @@ $(document).ready(function () {
       hEl.style.transform = "rotate(" + hDeg + "deg)";
       mEl.style.transform = "rotate(" + mDeg + "deg)";
       sEl.style.transform = "rotate(" + sDeg + "deg)";
-      dateEl.innerHTML = month + "/" + date + "/" + year;
+      if (date < 10) {
+         dateEl.innerHTML = month + "/0" + date + "/" + year;
+      } else {
+         dateEl.innerHTML = month + "/" + date + "/" + year;
+      }
       dayEl.innerHTML = day;
    }
-
-/*   setInterval("clock()", 100);*/
 
    setInterval(clock, 1000);
 

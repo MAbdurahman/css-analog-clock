@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-/* =============================================
-            Website Resets
-================================================ */
+/*===============================================================
+          website resets
+==================================================================*/
 *,
 *::after,
 *::before {
@@ -91,6 +91,41 @@
 	--fw-font-weight-400: 400;
 	--fw-font-weight-500: 500;
 	--fw-font-weight-600: 600;
+
+//**************** box shadows ****************//
+
+	--bs-box-shadow-bottom-000: 0px 8px 8px -5px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-bottom-100: 0px 8px 8px -5px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-bottom-200: 0px 8px 8px -5px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-bottom-300: 0px 8px 8px -3px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-bottom-400: 0px 8px 8px -3px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-bottom-500: 0px 8px 8px -3px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-bottom-600: 0px 8px 8px 0px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-bottom-700: 0px 8px 8px 0px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-bottom-800: 0px 8px 8px 0px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-bottom-900: 0px 8px 8px 0px rgba(34, 40, 45, 0.55);
+
+	--bs-box-shadow-right-000: 8px 0px 8px -5px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-right-100: 8px 0px 8px -5px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-right-200: 8px 0px 8px -5px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-right-300: 8px 0px 8px -3px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-right-400: 8px 0px 8px -3px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-right-500: 8px 0px 8px -3px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-right-600: 8px 0px 8px 0px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-right-700: 8px 0px 8px 0px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-right-800: 8px 0px 8px 0px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-right-900: 8px 0px 8px 0px rgba(34, 40, 45, 0.55);
+
+	--bs-box-shadow-bottom-right-000: 3px 3px 8px -1px rgba(34, 40, 45, 0.15), 3px 3px 8px -1px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-bottom-right-100: 3px 3px 8px -1px rgba(34, 40, 45, 0.25), 3px 3px 8px -1px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-bottom-right-200: 3px 3px 8px -1px rgba(34, 40, 45, 0.35), 3px 3px 8px -1px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-bottom-right-300: 5px 3px 13px -1px rgba(34, 40, 45, 0.15), 5px 3px 13px -1px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-bottom-right-400: 5px 3px 13px -1px rgba(34, 40, 45, 0.25), 5px 3px 13px -1px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-bottom-right-500: 5px 3px 13px -1px rgba(34, 40, 45, 0.35), 5px 3px 13px -1px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-bottom-right-600: 5px 3px 21px -1px rgba(34, 40, 45, 0.15), 5px 3px 21px -1px rgba(34, 40, 45, 0.15);
+	--bs-box-shadow-bottom-right-700: 5px 3px 21px -1px rgba(34, 40, 45, 0.25), 5px 3px 21px -1px rgba(34, 40, 45, 0.25);
+	--bs-box-shadow-bottom-right-800: 5px 3px 21px -1px rgba(34, 40, 45, 0.35), 5px 3px 21px -1px rgba(34, 40, 45, 0.35);
+	--bs-box-shadow-bottom-right-900: 5px 3px 5px -1px rgba(34, 40, 45, 0.25), 5px 3px 5px -1px rgba(34, 40, 45, 0.25);
 
 	/**************** timing functions ****************/
 	--tf-timing-function-basic-01: cubic-bezier(0.26, 0.1, 0.27, 1.55);
@@ -196,9 +231,9 @@ img {
 	height: auto;
 }
 
-/*=============================================
-   scrollbar styles
-================================================*/
+/*===============================================================
+          scrollbar styles
+==================================================================*/
 /* width */
 ::-webkit-scrollbar {
 	width: 3px;
@@ -283,10 +318,15 @@ img {
 	justify-content: center;
 }
 
+/*===============================================================
+          clock styles
+==================================================================*/
+
 .clock {
 	position: relative;
 	z-index: 2;
 	background: #ececec;
+	background: var(--clr-neutral-000);
 	width: 325px;
 	height: 325px;
 	/*margin: 8% auto 0;*/
@@ -295,16 +335,15 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 50%;
-	border: 14px solid #333;
-	box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8);
-
+	border: 14px solid var(--clr-blue-01-900);
+	box-shadow: var(--bs-box-shadow-right-800);
 }
 
 .dot {
 	width: 14px;
 	height: 14px;
 	border-radius: 50%;
-	background: #ccc;
+	background: var(--clr-neutral-300);
 	top: 0;
 	left: 0;
 	right: 0;
@@ -334,7 +373,7 @@ img {
 	z-index: 6;
 	width: 4px;
 	height: 100px;
-	background: #666;
+	background: #333;
 	top: 46px;
 	left: 50%;
 	margin-left: -2px;
@@ -360,7 +399,7 @@ img {
 span {
 	display: inline-block;
 	position: absolute;
-	color: #333;
+	color: var(--clr-augmented-900);
 	font-size: 22px;
 	font-family: "Poiret One", sans-serif;
 	font-weight: 700;
@@ -390,8 +429,9 @@ span {
 	position: absolute;
 	z-index: -1;
 	width: 2px;
-	height: 15px;
-	background: #666;
+	height: 12px;
+	/*background: #666;*/
+	background: var(--clr-blue-01-900);
 	left: 50%;
 	margin-left: -1px;
 	transform-origin: 50% 150px;
@@ -400,8 +440,9 @@ span {
 	position: absolute;
 	z-index: 2;
 	width: 4px;
-	height: 25px;
-	background: #666;
+	height: 20px;
+	/*background: #666;*/
+	background: var(--clr-blue-01-900);
 	left: 50%;
 	margin-left: -1px;
 	transform-origin: 50% 150px;
@@ -413,10 +454,11 @@ span {
 	height: 20px;
 	border-radius: 7px;
 	background: #888;
+	background: var(--clr-neutral-400);
 	text-align: center;
 	line-height: 20px;
-	color: #fff;
-	font-size: 11px;
+	color: var(--clr-neutral-000);
+	font-size: 12px;
 	top: 80px;
 	left: 50%;
 	margin-left: -60px;
@@ -431,10 +473,12 @@ span {
 	height: 20px;
 	border-radius: 7px;
 	background: #888;
+	background: var(--clr-neutral-400);
 	text-align: center;
 	line-height: 20px;
 	color: #fff;
-	font-size: 11px;
+	color: var(--clr-neutral-000);
+	font-size: 12px;
 	top: 200px;
 	left: 50%;
 	margin-left: -60px;
